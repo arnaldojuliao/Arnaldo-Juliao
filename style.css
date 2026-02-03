@@ -1,0 +1,648 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --fundo: radial-gradient(circle, #423d5e 0%, #0c0a1a 100%);
+  --fundob: rgba(5, 250, 250, 0.03);
+  --fundoc: rgba(5, 250, 250, 0.1);
+  --texto: #fff;
+  --bt: red;
+  --p: black;
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+header {
+  position: fixed;
+  padding: 0 30px;
+  width: 100%;
+  z-index: 999;
+  background: transpare;
+  backdrop-filter: blur(10px);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+header ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header li {
+  height: 50px;
+}
+
+header a {
+  height: 100%;
+  color: var(--texto);
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+header a:hover {
+  border-radius: 4px;
+  background-color: var(--bt);
+  transition: 0.2s;
+}
+
+header li:first-child {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #423d;
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.6);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: all 5s ease;
+}
+
+.navbar li {
+  width: 100%;
+}
+
+.navbar a {
+  width: 100%;
+  font-weight: bold;
+}
+
+.menu-button {
+  display: none;
+}
+
+.perfil {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  width: 100%;
+  background: var(--fundo);
+}
+
+.foto {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto .circulo {
+  width: 500px;
+  height: 500px;
+  border: 20px solid var(--bt);
+  box-shadow:
+    0 0 50px var(--bt),
+    inset 0 0 40px var(--bt);
+  border-radius: 50%;
+  margin-bottom: 3em;
+  position: relative;
+  z-index: 0;
+}
+
+.circulo span {
+  width: 500px;
+  height: 500px;
+  border-top: 20px solid;
+  box-shadow: 2px 1px 1px var(--texto);
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  z-index: 1;
+  animation: ciclo 1.2s ease-in infinite;
+}
+
+.foto .img {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
+.web {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px 70px;
+}
+
+.links {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px 70px;
+}
+
+.links ul {
+  display: flex;
+  gap: 10px;
+}
+
+.lk1 :hover {
+  background-color: blue;
+  border-radius: 10px;
+}
+.lk2 :hover {
+  background-color: rgb(122, 155, 62);
+  border-radius: 10px;
+}
+.lk3 :hover {
+  background-color: rgb(105, 100, 100);
+  border-radius: 10px;
+}
+.lk4 :hover {
+  background-color: red;
+  border-radius: 10px;
+}
+
+.sobre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 70px 0;
+}
+
+.sobre h2 {
+  padding: 4px;
+}
+
+.sobre p {
+  padding: 4px;
+}
+
+.sobre li {
+  margin: 20px 0 0 5em;
+  padding: 8px;
+}
+
+.sobre li a {
+  color: var(--texto);
+  font-weight: bold;
+  background-color: var(--bt);
+  padding: 5px;
+  border-radius: 10px;
+}
+.sobre li a:hover {
+  box-shadow: 0 0 8px;
+}
+
+.habilidade {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--fundob);
+}
+
+.habilidade h1 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.item {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 70px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+}
+
+.item li {
+  padding: 20px;
+  text-align: center;
+}
+
+.projecto {
+  width: 100%;
+  display: flex;
+  padding: 20px 70px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projecto h1 {
+  text-align: center;
+  padding: 30px 0 20px;
+}
+
+.view {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.view img {
+  border-radius: 10px;
+}
+
+.contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caixa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.caixa h1 {
+  padding-bottom: 20px;
+}
+
+.infor {
+  display: flex;
+  gap: 10px;
+}
+
+.call {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 80px);
+  border-radius: 10px;
+  width: 350px;
+  padding: 10px;
+  gap: 35px;
+}
+
+.call > a {
+  display: grid;
+
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--texto);
+  background-color: var(--fundob);
+}
+
+.call a:hover {
+  box-shadow: 0 0 10px var(--bt);
+}
+
+.gmail {
+  grid-column: 1/3;
+  grid-row: 1/1;
+}
+.loca {
+  grid-column: 3/1;
+  grid-row: 2/2;
+}
+.in {
+  padding: 10px;
+}
+.sap {
+  padding: 10px;
+}
+
+.msm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 550px;
+  border-radius: 10px;
+  padding: 20px 40px;
+  border-radius: 15px;
+  position: relative;
+  background-color: var(--fundob);
+}
+
+.msm input {
+  border-radius: 10px;
+}
+
+.msm input:focus {
+  border: 2px solid red;
+  box-shadow: 0 0 20px var(--bt);
+}
+
+.msm input::placeholder {
+  color: var(--p);
+  font-weight: bold;
+}
+
+.msm div input {
+  width: 232px;
+  padding: 10px;
+}
+
+.mensagem {
+  text-align: center;
+  height: 140px;
+  padding: 20px 0;
+  border-radius: 10px;
+}
+
+.mensagem:focus {
+  border: 2px solid red;
+  box-shadow: 0 0 20px var(--bt);
+}
+
+.mensagem::placeholder {
+  color: var(--p);
+  font-weight: bold;
+}
+
+.msm button {
+  width: 190px;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--texto);
+  background-color: var(--bt);
+}
+
+.msm button:hover {
+  box-shadow: 0 0 15px var(--bt);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 4em;
+  background-color: var(--fundoc);
+  position: relative;
+}
+
+.ideia {
+  height: 20dvh;
+}
+
+.ideia a {
+  padding: 8px;
+  color: var(--bt);
+  text-decoration: underline;
+}
+
+.baixo {
+  width: 100%;
+  display: flex;
+  border-top: 1px solid var(--fundoc);
+  align-items: center;
+  position: relative;
+}
+
+.baixo ul {
+  display: flex;
+  padding-top: 10px;
+}
+
+.baixo ul li:last-child {
+  position: absolute;
+  right: 0;
+}
+
+/*ANIMACAO DOS ITENS*/
+@keyframes ciclo {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes role {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/*RESPONSIVIDADE DE TELAS*/
+@media (max-width: 980px) {
+  .view {
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    gap: 10px;
+  }
+
+  .view img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .call {
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+    width: 290px;
+    gap: 20px;
+  }
+
+  .call > div {
+    padding: 15px;
+  }
+
+  .msm {
+    width: 500px;
+    padding: 15px 30px;
+  }
+
+  .msm div input {
+    width: 218px;
+  }
+}
+
+@media (max-width: 815px) {
+  .foto .circulo {
+    width: 400px;
+    height: 400px;
+  }
+
+  .circulo span {
+    width: 400px;
+    height: 400px;
+  }
+
+  .foto .img img {
+    width: 320px;
+  }
+
+  .links ul {
+    display: block;
+  }
+
+  .view {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+  }
+
+  .view img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .sobre p {
+    padding: 4px;
+  }
+
+  .sobre li {
+    margin: 20px 0 0 1em;
+    padding: 5px;
+  }
+
+  .infor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .call > div {
+    display: grid;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .call div img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 660px) {
+  .hidecel {
+    display: none;
+  }
+  .menu-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .menu-bt {
+    margin-left: 20px;
+  }
+  .foto .circulo {
+    width: 280px;
+    height: 280px;
+  }
+
+  .circulo span {
+    width: 280px;
+    height: 280px;
+  }
+  .foto .img img {
+    width: 250px;
+  }
+
+  .web {
+    position: relative;
+    padding: 20px 70px 0;
+  }
+
+  .links {
+    position: relative;
+    float: right;
+    padding: 0 50px;
+    margin-bottom: 10px;
+  }
+
+  .links ul {
+    display: flex;
+    margin-right: 0;
+  }
+
+  .view {
+    display: grid;
+    grid-template-columns: repeat(1, 200px);
+  }
+
+  .view img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .sobre {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .t {
+    text-align: start;
+    padding: 20px 40px;
+  }
+
+  .t li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pic img {
+    width: 330px;
+  }
+
+  .caixa h1 {
+    font-size: 24px;
+  }
+
+  .msm {
+    width: 380px;
+    padding: 12px 15px;
+  }
+
+  .msm div input {
+    width: 172px;
+  }
+
+  .ideia h1 {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .ideia a {
+    font-size: 11px;
+  }
+
+  .ideia a img {
+    width: 15px;
+  }
+
+  .baixo ul {
+    font-size: 12px;
+  }
+
+  .baixo ul span {
+    font-weight: bolder;
+  }
+}
